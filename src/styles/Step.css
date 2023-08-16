@@ -1,14 +1,9 @@
 .wrapper-step {
-  /* outline-color: green;
-  outline-style: dashed; */
-
   margin: 1rem;
   justify-content: center;
 }
 
 .step {
-  /* outline-color: blueviolet;
-  outline-style: dashed; */
   margin: 0.2rem;
   text-align: center;
   padding: 0.3rem;
