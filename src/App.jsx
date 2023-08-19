@@ -3,6 +3,7 @@ import Step from "./components/Step";
 import Result from "./components/Result";
 import "./styles/App.css";
 import Counter from "./components/counter";
+import ResetButton from "./components/buttons/ResetButton";
 
 function App() {
   const [stepsNumber, setStepnumber] = useState(1);
@@ -33,6 +34,12 @@ function App() {
     setCountNumber(sanitizedValue);
   };
 
+  const handleResetClick = (e) => {
+    e.preventDefault();
+    setCountNumber(0);
+    setStepnumber(1);
+  };
+
   return (
     <div className="wrapper">
       <Step
@@ -48,6 +55,10 @@ function App() {
         stepsNumber={stepsNumber}
       />
       <Result countNumber={countNumber} />
+      <ResetButton
+        handleResetClick={handleResetClick}
+        stepsNumber={stepsNumber}
+      />
     </div>
   );
 }
