@@ -58,6 +58,7 @@ function App() {
       <ResetButton
         handleResetClick={handleResetClick}
         stepsNumber={stepsNumber}
+        countNumber={countNumber}
       />
     </div>
   );

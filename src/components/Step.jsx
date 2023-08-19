@@ -5,7 +5,7 @@ function Step({ stepsNumber, handleRange, handleSubmit }) {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <label htmlFor={`Step${stepsNumber}`} className="label">
+        <label htmlFor={`Step : ${stepsNumber}`} className="label">
           Steps
         </label>
         <input
