@@ -16,7 +16,7 @@ function App() {
     e.preventDefault();
   };
 
-  const [countNumber, setCountNumber] = useState(1);
+  const [countNumber, setCountNumber] = useState(0);
 
   const handleAddCount = function () {
     setCountNumber(countNumber + stepsNumber);
