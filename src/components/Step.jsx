@@ -1,22 +1,34 @@
 import PropTypes from "prop-types";
 import "../styles/Step.css";
-import ButtonIncreaseStep from "./buttons/ButtonIncreaseStep";
-import ButtonDecreaseStep from "./buttons/ButtonDecreaseStep";
 
-function Step({ handleAddStep, handleSubStep, stepsNumber }) {
+function Step({ stepsNumber, handleRange, handleSubmit }) {
   return (
-    <div className="wrapper-step">
-      <ButtonDecreaseStep handleSubStep={handleSubStep} />
-      <span className="step">Step: {stepsNumber}</span>
-      <ButtonIncreaseStep handleAddStep={handleAddStep} />
-    </div>
+    <>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor={`Step${stepsNumber}`} className="label">
+          Steps
+        </label>
+        <input
+          className="range"
+          type="range"
+          id={`Step : ${stepsNumber}`}
+          name={stepsNumber}
+          min="1"
+          max="10"
+          step="1"
+          value={stepsNumber}
+          onChange={handleRange}
+        />
+        <span className="step">{stepsNumber}</span>
+      </form>
+    </>
   );
 }
 
 Step.propTypes = {
-  handleAddStep: PropTypes.func.isRequired,
-  handleSubStep: PropTypes.func.isRequired,
   stepsNumber: PropTypes.number.isRequired,
+  handleRange: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
 };
 
 export default Step;

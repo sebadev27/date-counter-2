@@ -7,12 +7,12 @@ import Counter from "./components/counter";
 function App() {
   const [stepsNumber, setStepnumber] = useState(1);
 
-  const handleAddStep = function () {
-    setStepnumber(stepsNumber + 1);
+  const handleRange = (e) => {
+    setStepnumber(Number(e.target.value));
   };
 
-  const handleSubStep = function () {
-    stepsNumber < 2 ? "" : setStepnumber(stepsNumber - 1);
+  const handleSubmit = (e) => {
+    e.preventDefault();
   };
 
   const [countNumber, setCountNumber] = useState(1);
@@ -25,16 +25,21 @@ function App() {
     setCountNumber(countNumber - stepsNumber);
   };
 
+  const handleCounterChange = (e) => {
+    setCountNumber(Number(e.target.value));
+  };
+
   return (
     <div className="wrapper">
       <Step
-        handleAddStep={handleAddStep}
-        handleSubStep={handleSubStep}
         stepsNumber={stepsNumber}
+        handleRange={handleRange}
+        handleSubmit={handleSubmit}
       />
       <Counter
         handleAddCount={handleAddCount}
         handleSubCount={handleSubCount}
+        handleCounterChange={handleCounterChange}
         countNumber={countNumber}
         stepsNumber={stepsNumber}
       />

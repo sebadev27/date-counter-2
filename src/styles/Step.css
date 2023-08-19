@@ -4,7 +4,15 @@
 }
 
 .step {
-  margin: 0.2rem;
   text-align: center;
-  padding: 0.3rem;
+  padding: 0.3rem 0.3rem 0.3rem 0.3rem;
+}
+
+.range {
+  position: relative;
+  top: 0.2rem;
+}
+
+.label {
+  padding-right: 0.2rem;
 }
