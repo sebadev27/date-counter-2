@@ -26,7 +26,11 @@ function App() {
   };
 
   const handleCounterChange = (e) => {
-    setCountNumber(Number(e.target.value));
+    const inputValue = e.target.value;
+
+    const sanitizedValue = inputValue.replace(/[^0-9]/g, "");
+
+    setCountNumber(sanitizedValue);
   };
 
   return (
